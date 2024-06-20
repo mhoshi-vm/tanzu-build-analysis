@@ -6,9 +6,7 @@ metadata:
 spec:
   buildpacks:
     builder: paketobuildpacks/builder-jammy-base
-  postBuildSteps: []
+  postBuildSteps:
+    - namedTask: tanzu-kubernetes-deployment
   registry: ""
-  runtimes:
-    - name: plain
-      steps:
-        - namedTask: tanzu-kubernetes-deployment
+  runtimes: []

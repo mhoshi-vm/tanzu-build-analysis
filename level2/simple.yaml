@@ -12,3 +12,6 @@ spec:
     - name: plain
       steps:
         - namedTask: tanzu-kubernetes-deployment
+    - name: image
+      steps:
+        - namedTask: tanzu-container-image

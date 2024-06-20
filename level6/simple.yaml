@@ -6,9 +6,12 @@ metadata:
 spec:
   buildpacks:
     builder: paketobuildpacks/builder-jammy-base
-  postBuildSteps: []
+  postBuildSteps:
+  - containerTask:
+      image: alpine
+      command: ["/bin/sh","-c"]
+      args:
+        - |
+          echo 'foo: bar' > output/dummy.yaml
   registry: ""
-  runtimes:
-    - name: plain
-      steps:
-        - namedTask: tanzu-kubernetes-deployment
+  runtimes: []
